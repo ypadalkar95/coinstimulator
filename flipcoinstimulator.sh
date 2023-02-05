@@ -19,4 +19,19 @@ else
 echo " tails won by :$((tails-heads))";
 fi
 
+if [ $heads -eq $tails ];
+then
+while [[ $heads-$tails=2 && $tails-$heads=2 ]]
+do
+FLIP=$(($(($RANDOM%10))%2))
+if [ $FLIP -eq 1 ];
+then
+    heads=$((heads+1))
+else
+     tails=$((tails+1))
+fi
+done
+echo heads : $heads
+echo  tails : $tails
+fi
 
