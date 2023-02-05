@@ -1,9 +1,10 @@
 heads=0
 tails=0
-for((i=0;i<=10;i++))
+while [[ $heads -lt 21 && $tails -lt 21 ]]
 do
 FLIP=$(($(($RANDOM%10))%2))
-if [ $FLIP -eq 1 ];then
+if [ $FLIP -eq 1 ];
+then
     heads=$((heads+1))
 else
      tails=$((tails+1))
@@ -11,3 +12,11 @@ fi
 done
 echo heads : $heads
 echo  tails : $tails
+if [ $heads -gt $tails ];
+then
+ echo " Heads won by :$((heads-tails))";
+else
+echo " tails won by :$((tails-heads))";
+fi
+
+
